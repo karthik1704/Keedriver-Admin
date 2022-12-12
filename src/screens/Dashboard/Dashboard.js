@@ -1,12 +1,26 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
-import {Box, HStack, Heading,  } from 'native-base';
+import {Box, HStack, Heading} from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import MenuCard from '../../components/MenuCard/MenuCard';
+import {useEffect} from 'react';
+import {useLoginMutation} from '../../redux/userSlice/userSlice';
 
 const Dashboard = ({navigation}) => {
+  const [login, data] = useLoginMutation();
+
+  useEffect(() => {
+    const loginData = {
+      username: 'admin',
+      password: '1234',
+    };
+    login(loginData)
+      .unwrap()
+      .then(data => console.log(data))
+      .catch(e => console.log(e));
+  }, []);
   return (
     <>
       <StatusBar bg="#000" barStyle="light-content" />
@@ -43,7 +57,6 @@ const Dashboard = ({navigation}) => {
             name="Trips"
             badge={100}
             onPress={() => navigation.navigate('CreateBooking')}
-
           />
           <MenuCard
             icon={<MaterialIcon size={45} name="book-plus-multiple" />}

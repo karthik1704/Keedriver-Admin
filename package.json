@@ -16,6 +16,9 @@
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.1",
     "@reduxjs/toolkit": "^1.8.6",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0",
+    "moment": "^2.29.4",
     "native-base": "^3.4.20",
     "react": "18.1.0",
     "react-hook-form": "^7.39.1",
@@ -26,6 +29,7 @@
     "react-native-svg": "^12.1.1",
     "react-native-vector-icons": "^9.2.0",
     "react-redux": "^8.0.4",
+    "sha1": "^1.1.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {

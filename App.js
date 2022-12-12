@@ -19,6 +19,7 @@ import Navigations from './src/navigations/Navigations';
 import store from './src/redux/store';
 
 
+
 const config = {
   dependencies: {
     'linear-gradient': require('react-native-linear-gradient').default,
@@ -30,6 +31,7 @@ const config = {
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
+
 
   return (
     <Provider store={store}>
